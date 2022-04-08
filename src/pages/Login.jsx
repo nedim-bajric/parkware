@@ -33,7 +33,7 @@ const Login = () => {
         <h3 className="w-full text-center font-bold">
           Nemaš profil?{" "}
           <Link
-            to="/login"
+            to="/register"
             className="text-white/70 underline underline-offset-4"
           >
             Registruj se.
