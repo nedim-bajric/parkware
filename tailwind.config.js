@@ -5,6 +5,9 @@ module.exports = {
       colors: {
         main_purple: "#514BC3",
         dark_blue: "#0D1724",
+        green: "#08FF00",
+        red: "#FF0000",
+        gray_disable: "#777777",
       },
     },
   },
