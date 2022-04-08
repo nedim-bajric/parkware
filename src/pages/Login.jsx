@@ -5,14 +5,14 @@ const Login = () => {
   return (
     <div className="w-screen h-screen  bg-dark_blue">
       <div className="w-full h-full text-white p-5 flex flex-col items-start justify-start space-y-10">
-        <h1 className="text-3xl font-medium">Prijavi se</h1>
+        <h1 className="text-base font-medium">Prijavi se</h1>
         <div className="w-full flex flex-col space-y-5">
           <div className="flex flex-col space-y-2">
             <input
               type="email"
               className="bg-transparent border-b border-main_purple/60 outline-none"
             />
-            <label for="email" className="px-1 text-gray-400">
+            <label for="email" className="px-1 text-gray-400 text-xs">
               Email
             </label>
           </div>
@@ -21,7 +21,7 @@ const Login = () => {
               type="email"
               className="bg-transparent border-b border-main_purple/60 outline-none"
             />
-            <label for="email" className="px-1 text-gray-400">
+            <label for="email" className="px-1 text-gray-400 text-xs">
               Lozinka
             </label>
           </div>
@@ -30,11 +30,11 @@ const Login = () => {
           Zaboravljena lozinka?
         </span>
         <Button title="Prijavi se" />
-        <h3 className="w-full text-center font-bold">
+        <h3 className="w-full text-center font-bold text-sm">
           Nemaš profil?{" "}
           <Link
             to="/register"
-            className="text-white/70 underline underline-offset-4"
+            className="text-white/70 underline underline-offset-4 text-sm"
           >
             Registruj se.
           </Link>
