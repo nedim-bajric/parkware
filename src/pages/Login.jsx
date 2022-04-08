@@ -5,7 +5,7 @@ const Login = () => {
   return (
     <div className="w-screen h-screen  bg-dark_blue">
       <div className="w-full h-full text-white p-5 flex flex-col items-start justify-start space-y-10">
-        <h1 className="text-base font-medium">Prijavite se</h1>
+        <h1 className="text-2xl font-medium">Prijavite se</h1>
         <div className="w-full flex flex-col space-y-5">
           <div className="flex flex-col space-y-2">
             <input
