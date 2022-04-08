@@ -8,6 +8,7 @@ module.exports = {
         green: "#08FF00",
         red: "#FF0000",
         gray_disable: "#777777",
+        pinky: "#F69E9E",
       },
     },
   },
