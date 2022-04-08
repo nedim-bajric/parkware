@@ -45,6 +45,24 @@ const Register = () => {
               </p>
             </div>
           </div>
+          <div className="flex flex-col items-start space-y-10">
+            <h3 className="px-1 pt-20">Informacije o vozilu</h3>
+
+            <div className="w-full flex flex-col ">
+              <input
+                type="email"
+                className="bg-transparent border-b border-main_purple/60 outline-none w-full"
+              />
+              <div className="flex w-full items-center justify-between mb-10">
+                <label for="fname" className="px-1 text-gray-400">
+                  Lozinka
+                </label>
+                <p className="text-gray-400/50 max-w-fit text-xs  text-right">
+                  + Dodaj još vozila
+                </p>
+              </div>
+            </div>
+          </div>
           <Button title="Registruj se" />
           <h3 className="w-full text-center font-bold">
             Imaš profil?{" "}
