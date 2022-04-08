@@ -72,7 +72,7 @@ const Register = () => {
             Imate profil?{" "}
             <Link
               to="/login"
-              className="text-white/70 underline underline-offset-4 text-sm"
+              className="text-white/100 underline-offset-4 text-sm"
             >
               Prijavite se.
             </Link>
