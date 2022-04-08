@@ -6,7 +6,7 @@ const Register = () => {
   return (
     <div className="w-screen min-h-screen bg-dark_blue  ">
       <div className="w-full h-full text-white p-5 flex flex-col items-start justify-start space-y-10">
-        <h1 className="text-base font-medium">Registruj se</h1>
+        <h1 className="text-base font-medium">Registrujte se</h1>
         <div className="max-w-full space-y-5">
           <div className="w-full flex items-center justify-center  space-x-2">
             <div className="flex-1 flex flex-col space-y-2">
@@ -56,19 +56,19 @@ const Register = () => {
                   Lozinka
                 </label>
                 <p className="text-gray-400/50 max-w-fit text-xs  text-right text-xs">
-                  + Dodaj još vozila
+                  + Dodajte još vozila
                 </p>
               </div>
             </div>
           </div>
           <Button title="Registruj se"/>
           <h3 className="w-full text-center font-bold text-sm">
-            Imaš profil?{" "}
+            Imate profil?{" "}
             <Link
               to="/login"
               className="text-white/70 underline underline-offset-4 text-sm"
             >
-              Prijavi se.
+              Prijavite se.
             </Link>
           </h3>
         </div>
