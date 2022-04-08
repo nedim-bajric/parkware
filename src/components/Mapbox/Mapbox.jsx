@@ -10,23 +10,23 @@ Leaflet.Icon.Default.mergeOptions({
   shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
 });
 
-const Mapbox = () => {
+const Mapbox = ({ size, size2 }) => {
   const position = [44.203439, 17.907743];
   return (
-    <div>
-      <MapContainer
-        center={position}
-        zoom={50}
-        style={{ height: "300px" }}
-        className="rounded-xl"
-      >
-        <TileLayer
-          attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        <Marker position={position} />
-      </MapContainer>
-    </div>
+    <MapContainer
+      center={position}
+      zoom={50}
+      style={{ height: size, width: size2 }}
+      className={`rounded-xl fixed inset-x-0 mx-auto ${
+        window.location.pathname === "/" && "top-10"
+      }`}
+    >
+      <TileLayer
+        attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      />
+      <Marker position={position} />
+    </MapContainer>
   );
 };
 

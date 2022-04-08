@@ -6,4 +6,8 @@
    .leaflet-bottom {
        @apply hidden
    }
+
+   .leaflet-control-container {
+       @apply hidden
+   }
 }
