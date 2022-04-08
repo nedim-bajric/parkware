@@ -46,7 +46,7 @@ const Register = () => {
             </div>
           </div>
           <div className="flex flex-col items-start space-y-10">
-            <h3 className="px-1 pt-20">Informacije o vozilu</h3>
+            <h3 className="px-1 pt-20 font-medium">Informacije o vozilu</h3>
 
             <div className="w-full flex flex-col ">
               <input
