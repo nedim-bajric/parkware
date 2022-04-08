@@ -5,7 +5,7 @@ import Button from "../components/Button/Button";
 const Register = () => {
   return (
     <div className="w-screen min-h-screen bg-dark_blue  ">
-      <div className="w-full h-full text-white p-5 flex flex-col items-start justify-start space-y-10">
+      <div className="w-full h-full text-white p-5 flex flex-col items-center justify-center space-y-10">
         <h1 className="text-base font-medium">Registrujte se</h1>
         <div className="max-w-full space-y-5">
           <div className="w-full flex items-center justify-center  space-x-2">
@@ -62,11 +62,11 @@ const Register = () => {
             </div>
           </div>
           <Button title="Registruj se"/>
-          <h3 className="w-full text-center font-bold text-sm">
+          <h3 className="w-full text-center text-white/30 font-bold text-sm">
             Imate profil?{" "}
             <Link
               to="/login"
-              className="text-white/70 underline underline-offset-4 text-sm"
+              className="text-white/100 underline-offset-4 text-sm"
             >
               Prijavite se.
             </Link>
