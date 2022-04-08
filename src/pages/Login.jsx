@@ -5,7 +5,7 @@ const Login = () => {
   return (
     <div className="w-screen h-screen  bg-dark_blue">
       <div className="w-full h-full text-white p-5 flex flex-col items-start justify-start space-y-10">
-        <h1 className="text-base font-medium">Prijavi se</h1>
+        <h1 className="text-base font-medium">Prijavite se</h1>
         <div className="w-full flex flex-col space-y-5">
           <div className="flex flex-col space-y-2">
             <input
@@ -31,12 +31,12 @@ const Login = () => {
         </span>
         <Button title="Prijavi se" />
         <h3 className="w-full text-center font-bold text-sm">
-          Nemaš profil?{" "}
+          Nemate profil?{" "}
           <Link
             to="/register"
             className="text-white/70 underline underline-offset-4 text-sm"
           >
-            Registruj se.
+            Registrujte se.
           </Link>
         </h3>
       </div>
