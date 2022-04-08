@@ -30,11 +30,11 @@ const Login = () => {
           Zaboravljena lozinka?
         </span>
         <Button title="Prijavi se" />
-        <h3 className="w-full text-center font-bold text-sm">
+        <h3 className="w-full text-white/30 text-center font-bold text-sm">
           Nemate profil?{" "}
           <Link
             to="/register"
-            className="text-white/70 underline underline-offset-4 text-sm"
+            className="text-white/100 underline underline-offset-4 text-sm"
           >
             Registrujte se.
           </Link>
