@@ -15,7 +15,7 @@ const Homepage = () => {
         </div>
         <Mapbox />
         <div className="w-full flex flex-col space-y-5 pb-10">
-          <h1 className="w-full text-center text-gray_disable underline underline-offset-8 decoration-main_purple/80">
+          <h1 className="w-full text-center text-gray_disable underline underline-offset-8 decoration-main_purple/80 text-xs">
             Parking lokacije
           </h1>
           {lokacije.map((item) => (

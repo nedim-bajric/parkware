@@ -9,14 +9,14 @@ const LokacijeCard = ({ item }) => {
             <RiParkingFill size={30} />
           </div>
           <div className="w-full">
-            <h1 className="font-bold">{item.location}</h1>
+            <h1 className="font-bold text-base">{item.location}</h1>
             <div className="flex flex-col items-start space-y-2 w-full pt-2">
               <div className="flex items-start justify-between w-full">
-                <span className="text-gray_disable font-medium">
+                <span className="text-gray_disable font-medium text-base">
                   Dostupnost
                 </span>
                 <span
-                  className={` font-bold ${
+                  className={` font-bold  ${
                     item.takenSpots === item.totalSpots
                       ? "text-red"
                       : "text-green"
