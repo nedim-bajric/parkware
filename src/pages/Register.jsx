@@ -6,12 +6,14 @@ const Register = () => {
   return (
     <div className="w-screen min-h-screen bg-dark_blue  ">
       <div className="w-full h-full text-white p-5 flex flex-col items-start justify-start space-y-10">
-        <h1 className="text-base font-medium">Registrujte se</h1>
-        <div className="max-w-full space-y-5">
+        <h1 className="text-2xl font-medium">Registrujte se</h1>
+        <div className="max-w-full space-y-5  mx-auto">
           <div className="w-full flex items-center justify-center  space-x-2">
             <div className="flex-1 flex flex-col space-y-2">
               <input className="w-full bg-transparent border-b border-main_purple/60 outline-none" />
-              <label className="align self-start text-gray-400 px-1 text-xs">Ime</label>
+              <label className="align self-start text-gray-400 px-1 text-xs">
+                Ime
+              </label>
             </div>
             <div className="flex-1 flex flex-col items-end space-y-2">
               <input className="w-full bg-transparent border-b border-main_purple/60 outline-none" />
@@ -39,12 +41,16 @@ const Register = () => {
                 Lozinka
               </label>
               <p className="text-gray-400/50 max-w-xs text-xs  text-right ">
-                Lozinka mora sadržavati<br/>najmanje 8 karaktera
+                Lozinka mora sadržavati
+                <br />
+                najmanje 8 karaktera
               </p>
             </div>
           </div>
           <div className="flex flex-col items-start space-y-10">
-            <h3 className="px-1 pt-20 font-medium text-xs">Informacije o vozilu</h3>
+            <h3 className="px-1 pt-20 font-medium text-xs">
+              Informacije o vozilu
+            </h3>
 
             <div className="w-full flex flex-col ">
               <input
@@ -61,7 +67,7 @@ const Register = () => {
               </div>
             </div>
           </div>
-          <Button title="Registruj se"/>
+          <Button title="Registruj se" />
           <h3 className="w-full text-center font-bold text-sm">
             Imate profil?{" "}
             <Link
