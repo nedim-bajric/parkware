@@ -8,7 +8,7 @@ const Homepage = () => {
 
   const getPlaces = async () => {
     const response = await apiReq.get("/parkingLocations");
-    console.log(response);
+
     setPlaces(response.data);
   };
 
@@ -31,7 +31,7 @@ const Homepage = () => {
           </h1>
           <div className="lg:flex">
             {places?.map((item) => (
-              <LokacijeCard key={item.id} item={item} />
+              <LokacijeCard key={item._id} item={item} />
             ))}
           </div>
         </div>

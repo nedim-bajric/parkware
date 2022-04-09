@@ -2,8 +2,11 @@ import React from "react";
 import Button from "../Button/Button";
 import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 const Infocard = () => {
   const navigate = useNavigate();
+  const data = useSelector((state) => state.parking);
+  console.log(data.parking);
   return (
     <div className="absolute inset-x-0 text-white z-50 w-scren h-screen bg-black/50">
       <div className="p-3 flex flex-col items-start justify-between h-full w-full">
@@ -16,17 +19,15 @@ const Infocard = () => {
 
         <div className=" w-11/12 mx-auto flex flex-col space-y-5">
           <div className="w-full bg-black/70 p-5 rounded-lg flex flex-col space-y-3">
-            <h1 className="text-xl">
-              Trg Bosne i Hercegovine 1,
-              <br /> Zenica 72000
-            </h1>
+            <h1 className="text-xl">{data.parking.location}</h1>
             <span className="w-full flex items-center justify-between text-2xl font-medium">
-              Cijena <span>1.50 KM/h</span>
+              Cijena <span>{data.parking.price.toFixed(2)} KM/h</span>
             </span>
             <span className="w-full flex items-center justify-between text-sm text-zinc-200">
               Dostupnost{" "}
               <span className="text-green">
-                21 <span className="text-white"> / 30</span>
+                {data.parking.takenSpots}{" "}
+                <span className="text-white"> / {data.parking.totalSpots}</span>
               </span>
             </span>
             <span className="w-full flex items-center justify-between text-sm text-zinc-200">

@@ -3,6 +3,9 @@ import Register from "../pages/Register";
 import Login from "../pages/Login";
 import Parking from "../pages/Parking";
 import Splash from "../pages/Splash";
+
+const token = localStorage.getItem("token");
+
 const routes = [
   { path: "/parking", element: Parking },
   { path: "/login", element: Login },

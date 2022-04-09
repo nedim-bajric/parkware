@@ -13,7 +13,7 @@ const Register = () => {
   });
   const registerHandle = async () => {
     const response = await apiReq.post("/users/signUp", data);
-    console.log(response);
+    localStorage.setItem("token", response.data.token);
   };
   return (
     <div className="register-page-content flex">
@@ -92,7 +92,9 @@ const Register = () => {
               <div className="flex-1 flex flex-col space-y-2">
                 <input
                   className="w-full bg-transparent border-b border-main_purple/60 outline-none"
-                  onChange={(e) => setData({ ...data, ime: e.target.value })}
+                  onChange={(e) =>
+                    setData({ ...data, firstName: e.target.value })
+                  }
                 />
                 <label className="align self-start text-gray-400 px-1 text-base">
                   Ime
@@ -102,7 +104,7 @@ const Register = () => {
                 <input
                   className="w-full bg-transparent border-b border-main_purple/60 outline-none"
                   onChange={(e) =>
-                    setData({ ...data, prezime: e.target.value })
+                    setData({ ...data, lastName: e.target.value })
                   }
                 />
                 <slabel className="align self-start text-gray-400 px-1 text-base">

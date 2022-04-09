@@ -1,16 +1,20 @@
 import React, { useState } from "react";
 import Button from "../components/Button/Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useNavigationType } from "react-router-dom";
 import apiReq from "../api/apiReq";
 const Login = () => {
   const [data, setData] = useState({
     email: "",
-    pw: "",
+    password: "",
   });
-
+  const navigate = useNavigate();
   const loginHandle = async () => {
     const response = await apiReq.post("/users/signIn", data);
     console.log(response);
+    localStorage.setItem("token", response.data.token);
+    if (response.status === 200) {
+      navigate("/home");
+    }
   };
   return (
     <div className="login-page-content flex">
@@ -96,8 +100,8 @@ const Login = () => {
             </div>
             <div className="flex flex-col space-y-2">
               <input
-                onChange={(e) => setData({ ...data, pw: e.target.value })}
-                type="email"
+                onChange={(e) => setData({ ...data, password: e.target.value })}
+                type="password"
                 className="bg-transparent border-b border-main_purple/60 outline-none"
               />
               <label for="email" className="px-1 text-gray-400 text-base">
