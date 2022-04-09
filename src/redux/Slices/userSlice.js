@@ -5,7 +5,7 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     setUser: (state, action) => {
-      state.user = action.payload.ime;
+      state.ime = action.payload.ime;
       state.prezime = action.payload.prezime;
     },
   },
