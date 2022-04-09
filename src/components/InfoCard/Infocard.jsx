@@ -2,10 +2,12 @@ import React from "react";
 import Button from "../Button/Button";
 import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { handleRes, setData } from "../../redux/Slices/reservationSlice";
 const Infocard = () => {
   const navigate = useNavigate();
   const data = useSelector((state) => state.parking);
+  const dispatch = useDispatch();
 
   return (
     <div className="absolute inset-x-0 text-white z-50 w-scren h-screen bg-black/50">
@@ -57,6 +59,7 @@ const Infocard = () => {
           </div>
           <Button
             title="Potrvdi"
+            onClick={() => dispatch(handleRes()) && dispatch(setData(data))}
             disable={
               data.parking.totalSpots === data.parking.takenspots ? true : false
             }

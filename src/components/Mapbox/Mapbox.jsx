@@ -2,7 +2,6 @@ import Leaflet from "leaflet";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { useSelector } from "react-redux";
-import { latLng } from "leaflet";
 
 Leaflet.Icon.Default.imagePath = "../node_modules/leaflet";
 delete Leaflet.Icon.Default.prototype._getIconUrl;
@@ -12,13 +11,27 @@ Leaflet.Icon.Default.mergeOptions({
   shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
 });
 
-const Mapbox = ({ size, size2, latt, lng }) => {
+const Mapbox = ({ size, size2, latt, lng, latt2, lng2 }) => {
+  const data2 = useSelector((state) => state.reservation.data);
+
   const data = useSelector((state) => state.parking);
   const lat =
-    window.location.pathname === "/home" ? latt : data.parking?.lantitude;
+    window.location.pathname === "/home"
+      ? latt
+      : window.location.pathname === "/rezervacija"
+      ? latt2
+      : data.parking
+      ? data.parking.lantitude
+      : data2.parking.lantitude;
   const long =
-    window.location.pathname === "/home" ? lng : data.parking?.longitude;
-
+    window.location.pathname === "/home"
+      ? lng
+      : window.location.pathname === "/rezervacija"
+      ? lng2
+      : data.parking
+      ? data.parking.longitude
+      : data2.parking.longitude;
+  console.log(lat, long);
   const position = [lat, long];
 
   return (

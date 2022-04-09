@@ -3,10 +3,10 @@ import Register from "../pages/Register";
 import Login from "../pages/Login";
 import Parking from "../pages/Parking";
 import Splash from "../pages/Splash";
-
-const token = localStorage.getItem("token");
+import Rezervacija from "../pages/Rezervacija";
 
 const routes = [
+  { path: "/rezervacija", element: Rezervacija },
   { path: "/parking", element: Parking },
   { path: "/login", element: Login },
   { path: "/register", element: Register },
