@@ -10,15 +10,15 @@ Leaflet.Icon.Default.mergeOptions({
   shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
 });
 
-const Mapbox = () => {
+const Mapbox = ({ size, size2 }) => {
   const position = [44.203439, 17.907743];
   return (
     <div>
       <MapContainer
         center={position}
         zoom={50}
-        style={{ height: "300px" }}
-        className="rounded-xl"
+        style={{ height: size, width: size2 }}
+        className="rounded-xl mx-auto fixed instet-x-0"
       >
         <TileLayer
           attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

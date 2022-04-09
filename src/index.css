@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer {
-   .leaflet-bottom {
+   .leaflet-bottom, .leaflet-control-container {
        @apply hidden
    }
 }
