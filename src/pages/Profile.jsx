@@ -6,7 +6,7 @@ import apiReq from "../api/apiReq";
 import { useSelector } from "react-redux";
 const Profile = () => {
   const navigate = useNavigate();
-  const info = useSelector((state) => state.user.data);
+  const info = useSelector(state => state.user.data);
   console.log(info);
   const [data, setData] = useState({
     firstName: "",
@@ -33,9 +33,11 @@ const Profile = () => {
           <div className="w-full flex flex-col items-center space-y-20">
             <div className="w-full flex flex-col space-y-5">
               <div className="w-full flex flex-col items-center space-y-2">
-                <h1 className="text-2xl text-white">Nedim Bajric</h1>
+                <h1 className="text-2xl text-white">
+                  {info.firstName} {info.lastName}
+                </h1>
                 <span className="text-xs font-semibold text-gray_disable">
-                  nedim@gmail.com
+                  {info.email}
                 </span>
               </div>
               <div className="w-3/4  mx-auto bg-main_purple/40 h-0.5" />
@@ -45,7 +47,7 @@ const Profile = () => {
                 <div className="flex-1 flex flex-col space-y-2">
                   <input
                     className="w-full bg-transparent border-b border-main_purple/60 outline-none"
-                    onChange={(e) =>
+                    onChange={e =>
                       setData({ ...data, firstName: e.target.value })
                     }
                   />
@@ -56,7 +58,7 @@ const Profile = () => {
                 <div className="flex-1 flex flex-col items-end space-y-2">
                   <input
                     className="w-full bg-transparent border-b border-main_purple/60 outline-none"
-                    onChange={(e) =>
+                    onChange={e =>
                       setData({ ...data, lastName: e.target.value })
                     }
                   />
@@ -67,7 +69,7 @@ const Profile = () => {
               </div>
               <div className="flex flex-col space-y-2">
                 <input
-                  onChange={(e) => setData({ ...data, email: e.target.value })}
+                  onChange={e => setData({ ...data, email: e.target.value })}
                   type="email"
                   className="bg-transparent border-b border-main_purple/60 outline-none"
                 />
@@ -77,9 +79,7 @@ const Profile = () => {
               </div>
               <div className="flex flex-col space-y-2 w-full">
                 <input
-                  onChange={(e) =>
-                    setData({ ...data, password: e.target.value })
-                  }
+                  onChange={e => setData({ ...data, password: e.target.value })}
                   type="password"
                   className="bg-transparent border-b border-main_purple/60 outline-none"
                 />
