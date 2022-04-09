@@ -2,16 +2,24 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import Button from "../components/Button/Button";
+import apiReq from "../api/apiReq";
+import { useSelector } from "react-redux";
 const Profile = () => {
   const navigate = useNavigate();
+  const info = useSelector((state) => state.user.data);
+  console.log(info);
   const [data, setData] = useState({
     firstName: "",
     lastName: "",
     email: "",
     password: "",
     confirmPassword: "",
-    registrationPlates: "",
   });
+
+  const handleUpdate = async () => {
+    const response = await apiReq.put(`/users/update/${info.id}`, data);
+    console.log(response);
+  };
   return (
     <div className="bg-dark_blue w-screen h-screen">
       <div className="w-full h-full p-4">
@@ -87,7 +95,7 @@ const Profile = () => {
             </div>
           </div>
           <div>
-            <Button title="Spremi promjene" />
+            <Button title="Spremi promjene" onClick={handleUpdate} />
           </div>
         </div>
       </div>

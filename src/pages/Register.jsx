@@ -96,7 +96,7 @@ const Register = () => {
               <div className="flex-1 flex flex-col space-y-2">
                 <input
                   className="w-full bg-transparent border-b border-main_purple/60 outline-none"
-                  onChange={e =>
+                  onChange={(e) =>
                     setData({ ...data, firstName: e.target.value })
                   }
                 />
@@ -107,7 +107,9 @@ const Register = () => {
               <div className="flex-1 flex flex-col items-end space-y-2">
                 <input
                   className="w-full bg-transparent border-b border-main_purple/60 outline-none"
-                  onChange={e => setData({ ...data, lastName: e.target.value })}
+                  onChange={(e) =>
+                    setData({ ...data, lastName: e.target.value })
+                  }
                 />
                 <slabel className="align self-start text-gray-400 px-1 text-base">
                   Prezime
@@ -116,7 +118,7 @@ const Register = () => {
             </div>
             <div className="flex flex-col space-y-2">
               <input
-                onChange={e => setData({ ...data, email: e.target.value })}
+                onChange={(e) => setData({ ...data, email: e.target.value })}
                 type="email"
                 className="bg-transparent border-b border-main_purple/60 outline-none"
               />
@@ -126,7 +128,7 @@ const Register = () => {
             </div>
             <div className="flex flex-col space-y-2 w-full">
               <input
-                onChange={e => setData({ ...data, password: e.target.value })}
+                onChange={(e) => setData({ ...data, password: e.target.value })}
                 type="password"
                 className="bg-transparent border-b border-main_purple/60 outline-none"
               />
@@ -143,7 +145,7 @@ const Register = () => {
             </div>
             <div className="flex flex-col space-y-2 w-full">
               <input
-                onChange={e =>
+                onChange={(e) =>
                   setData({ ...data, confirmPassword: e.target.value })
                 }
                 type="password"
@@ -162,7 +164,7 @@ const Register = () => {
 
               <div className="w-full flex flex-col ">
                 <input
-                  onChange={e =>
+                  onChange={(e) =>
                     setData({ ...data, registrationPlates: e.target.value })
                   }
                   type="text"
