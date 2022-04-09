@@ -39,7 +39,7 @@ const Infocard = () => {
               Nedjeljom i praznicima besplatan parking 0-24
             </span>
           </div>
-          <Button title="Potrvdi" />
+          <Button title="Potrvdi" disable={false} />
         </div>
       </div>
     </div>
