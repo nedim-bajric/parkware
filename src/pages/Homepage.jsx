@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { RiMenu5Line } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import apiReq from "../api/apiReq";
 import LokacijeCard from "../components/LokacijeCard/LokacijeCard";
 import Mapbox from "../components/Mapbox/Mapbox";
@@ -10,9 +11,10 @@ const Homepage = () => {
   const [latt, setLat] = useState(null);
   const [lng, setLng] = useState(null);
   const [status, setStatus] = useState(null);
+  const [token, setToken] = useState(null);
+  console.log(token);
   const dispatch = useDispatch();
-  const hidden = useSelector((state) => state.menu.hidden);
-  console.log(hidden);
+  const navigate = useNavigate();
   const getLocation = () => {
     if (!navigator.geolocation) {
       setStatus("Geolocation is not supported by your browser");
@@ -34,43 +36,49 @@ const Homepage = () => {
     const response = await apiReq.get("/parkingLocations");
     setPlaces(response.data);
   };
-
   useEffect(() => {
     getPlaces();
     getLocation();
+    setToken(localStorage.token);
   }, []);
   return (
-    <div className="w-screen min-h-screen bg-dark_blue">
-      <div className="w-full h-full text-white px-5 flex flex-col space-y-10">
-        <div className="w-[90%] h-14 flex items-center justify-between fixed">
-          <h1 className="text-2xl font-medium">Pozdrav Vedad</h1>
-          <div
-            className="bg-main_purple p-2 rounded-full "
-            onClick={() => dispatch(handleMenu())}
-          >
-            <RiMenu5Line size={25} />
-          </div>
-        </div>
-        {status !== "Done" ? (
-          <span className="text-center pt-20  font-medium animate-bounce">
-            Učitavanje Vaše lokacije ...
-          </span>
-        ) : (
-          <Mapbox size="35vh" size2="95vw" latt={latt} lng={lng} />
-        )}
+    <>
+      {token === null || token === undefined ? (
+        navigate("/")
+      ) : (
+        <div className="w-screen min-h-screen bg-dark_blue">
+          <div className="w-full h-full text-white px-5 flex flex-col space-y-10">
+            <div className="w-[90%] h-14 flex items-center justify-between fixed">
+              <h1 className="text-2xl font-medium">Pozdrav Vedad</h1>
+              <div
+                className="bg-main_purple p-2 rounded-full "
+                onClick={() => dispatch(handleMenu())}
+              >
+                <RiMenu5Line size={25} />
+              </div>
+            </div>
+            {status !== "Done" ? (
+              <span className="text-center pt-20  font-medium animate-bounce">
+                Učitavanje Vaše lokacije ...
+              </span>
+            ) : (
+              <Mapbox size="35vh" size2="95vw" latt={latt} lng={lng} />
+            )}
 
-        <div className="w-full flex flex-col space-y-5 pt-80">
-          <h1 className="w-full text-center text-gray_disable underline underline-offset-8 decoration-main_purple/80 text-xs lg:text-base">
-            Parking lokacije
-          </h1>
-          <div className="lg:flex">
-            {places?.map((item) => (
-              <LokacijeCard key={item._id} item={item} />
-            ))}
+            <div className="w-full flex flex-col space-y-5 pt-80">
+              <h1 className="w-full text-center text-gray_disable underline underline-offset-8 decoration-main_purple/80 text-xs lg:text-base">
+                Parking lokacije
+              </h1>
+              <div className="lg:flex">
+                {places?.map((item) => (
+                  <LokacijeCard key={item._id} item={item} />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 

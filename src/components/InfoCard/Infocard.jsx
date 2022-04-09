@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 const Infocard = () => {
   const navigate = useNavigate();
   const data = useSelector((state) => state.parking);
-  console.log(data.parking);
+
   return (
     <div className="absolute inset-x-0 text-white z-50 w-scren h-screen bg-black/50">
       <div className="p-3 flex flex-col items-start justify-between h-full w-full">
