@@ -10,6 +10,9 @@ module.exports = {
         gray_disable: "#777777",
         pinky: "#F69E9E",
       },
+      height: {
+        lg_scr: "90%"
+      }
     },
   },
   plugins: [],
