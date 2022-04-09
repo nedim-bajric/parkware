@@ -13,7 +13,7 @@ const Homepage = () => {
             <RiMenu5Line size={25} />
           </div>
         </div>
-        <Mapbox size="35vh" size2="45vh" />
+        <Mapbox size="35vh" size2="95vw" />
         <div className="w-full flex flex-col space-y-5 pt-64">
           <h1 className="w-full text-center text-gray_disable underline underline-offset-8 decoration-main_purple/80 text-xs lg:text-base">
             Parking lokacije

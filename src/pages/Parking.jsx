@@ -6,7 +6,7 @@ const Parking = () => {
   return (
     <div className="w-screen max-h-scree relative">
       <Infocard />
-      <Mapbox size="100vh" size2="100vh" />
+      <Mapbox size="100vh" size2="100vw" />
     </div>
   );
 };

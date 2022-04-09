@@ -18,7 +18,7 @@ const Mapbox = ({ size, size2 }) => {
         center={position}
         zoom={50}
         style={{ height: size, width: size2 }}
-        className="rounded-xl mx-auto fixed instet-x-0"
+        className="rounded-xl mx-auto fixed left-0 right-0"
       >
         <TileLayer
           attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
