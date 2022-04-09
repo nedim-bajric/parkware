@@ -15,12 +15,14 @@ const Homepage = () => {
         </div>
         <Mapbox size="35vh" size2="45vh" />
         <div className="w-full flex flex-col space-y-5 pt-64">
-          <h1 className="w-full text-center text-gray_disable underline underline-offset-8 decoration-main_purple/80 text-xs">
+          <h1 className="w-full text-center text-gray_disable underline underline-offset-8 decoration-main_purple/80 text-xs lg:text-base">
             Parking lokacije
           </h1>
-          {lokacije.map((item) => (
-            <LokacijeCard key={item.id} item={item} />
-          ))}
+          <div className="lg:flex">
+            {lokacije.map((item) => (
+              <LokacijeCard key={item.id} item={item} />
+            ))}
+          </div>
         </div>
       </div>
     </div>

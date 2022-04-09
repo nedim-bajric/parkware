@@ -2,14 +2,14 @@ import React from "react";
 import { RiParkingFill } from "react-icons/ri";
 const LokacijeCard = ({ item }) => {
   return (
-    <div className="w-full h-fit  border-b border-gray_disable/30 ">
+    <div className="w-full h-fit  border-b border-gray_disable/30 lg:w-1/5 lg:border lg:rounded-xl lg:p-5 lg:m-2 lg:bg-main_purple/10">
       <div className="w-full h-full flex flex-col py-5">
-        <div className="flex items-start space-x-5 w-full">
-          <div className="bg-main_purple w-12 flex items-center justify-center rounded-xl py-2">
+        <div className="flex items-start space-x-5 w-full lg:space-x-0 lg:flex-col lg:items-center">
+          <div className="bg-main_purple w-12 flex items-center justify-center rounded-xl py-2 lg:mb-5">
             <RiParkingFill size={30} />
           </div>
-          <div className="w-full">
-            <h1 className="font-bold text-base">{item.location}</h1>
+          <div className="w-full lg:w-full">
+            <h1 className="font-bold text-base lg:flex lg:justify-center">{item.location}</h1>
             <div className="flex flex-col items-start space-y-2 w-full pt-2">
               <div className="flex items-start justify-between w-full">
                 <span className="text-gray_disable font-medium text-base">
