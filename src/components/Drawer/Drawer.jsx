@@ -40,7 +40,7 @@ const Drawer = () => {
                   <div className="bg-main_purple w-12 flex items-center justify-center rounded-xl py-2 lg:mb-5">
                     <RiParkingFill size={30} />
                   </div>
-                  <span className="text-xl font-semibold">
+                  <span className="text-xl font-semibold lg:mb-5">
                     Parking loakcije
                   </span>
                 </div>
@@ -53,7 +53,7 @@ const Drawer = () => {
                   <div className="bg-main_purple w-12 flex items-center justify-center rounded-xl py-2 lg:mb-5">
                     <RiNotificationLine size={30} />
                   </div>
-                  <span className="text-xl font-semibold">
+                  <span className="text-xl font-semibold lg:mb-5">
                     Moja rezervacija
                   </span>
                 </div>
@@ -65,7 +65,7 @@ const Drawer = () => {
                   <div className="bg-main_purple w-12 flex items-center justify-center rounded-xl py-2 lg:mb-5">
                     <RiUserLine size={30} />
                   </div>
-                  <span className="text-xl font-semibold">Profil</span>
+                  <span className="text-xl font-semibold lg:mb-5">Profil</span>
                 </div>
               </div>
 
@@ -80,7 +80,7 @@ const Drawer = () => {
                 <div className="bg-main_purple w-12 flex items-center justify-center rounded-xl py-2 lg:mb-5">
                   <RiLogoutCircleRLine size={30} />
                 </div>
-                <span className="text-xl font-semibold">Odjavi se</span>
+                <span className="text-xl font-semibold lg:mb-5">Odjavite se</span>
               </div>
             </div>
           </div>
