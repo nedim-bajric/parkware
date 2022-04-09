@@ -74,11 +74,11 @@ const Register = () => {
               </div>
             </div>
             <Button title="Registruj se" />
-            <h3 className="w-full text-center font-bold text-sm lg:text-base">
+            <h3 className="w-full text-center font-bold text-white/30 text-sm lg:text-base">
               Imate profil?{" "}
               <Link
                 to="/login"
-                className="text-white/70 underline underline-offset-4 text-sm lg:text-base"
+                className="text-white/100 underline underline-offset-4 text-sm lg:text-base"
               >
                 Prijavite se.
               </Link>
