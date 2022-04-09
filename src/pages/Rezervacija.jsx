@@ -31,7 +31,6 @@ const Rezervacija = () => {
       );
     }
   };
-  console.log(lng2, latt2);
   useEffect(() => {
     getLocation();
   }, []);

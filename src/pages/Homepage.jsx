@@ -12,7 +12,7 @@ const Homepage = () => {
   const [lng, setLng] = useState(null);
   const [status, setStatus] = useState(null);
   const [token, setToken] = useState(null);
-  console.log(token);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const getLocation = () => {
@@ -37,7 +37,7 @@ const Homepage = () => {
     setPlaces(response.data);
   };
   useEffect(() => {
-    getPlaces();
+    setTimeout(() => getPlaces(), 500);
     getLocation();
     setToken(localStorage.token);
   }, []);

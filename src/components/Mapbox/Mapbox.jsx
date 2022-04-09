@@ -31,7 +31,6 @@ const Mapbox = ({ size, size2, latt, lng, latt2, lng2 }) => {
       : data.parking
       ? data.parking.longitude
       : data2.parking.longitude;
-  console.log(lat, long);
   const position = [lat, long];
 
   return (
