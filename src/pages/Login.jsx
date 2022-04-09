@@ -11,14 +11,14 @@ const Login = () => {
       </div>
       <div className="w-screen h-screen  bg-dark_blue lg:w-1/2 h-screen">
         <div className="w-full h-full text-white p-5 flex flex-col items-start justify-start space-y-10 lg:mx-auto lg:w-2/3 lg:p-20 lg:place-content-center">
-          <h1 className="text-2xl lg:text-3xl font-medium">Prijavite se</h1>
+          <h1 className="text-3xl font-medium">Prijavite se</h1>
           <div className="w-full flex flex-col space-y-5">
             <div className="flex flex-col space-y-2">
               <input
                 type="email"
                 className="bg-transparent border-b border-main_purple/60 outline-none"
               />
-              <label for="email" className="px-1 text-gray-400 text-xs lg:text-sm">
+              <label for="email" className="px-1 text-gray-400 text-base">
                 Email
               </label>
             </div>
@@ -27,20 +27,20 @@ const Login = () => {
                 type="email"
                 className="bg-transparent border-b border-main_purple/60 outline-none"
               />
-              <label for="email" className="px-1 text-gray-400 text-xs lg:text-sm">
+              <label for="email" className="px-1 text-gray-400 text-base">
                 Lozinka
               </label>
             </div>
           </div>
-          <span className="w-full text-right text-xs lg:text-sm text-pinky/50">
+          <span className="w-full text-right text-base text-pinky/50">
             Zaboravljena lozinka?
           </span>
           <Button title="Prijavi se" />
-          <h3 className="w-full text-white/30 text-center font-bold text-sm lg:text-base">
+          <h3 className="w-full text-white/30 text-center font-bold text-base">
             Nemate profil?{" "}
             <Link
               to="/register"
-              className="text-white/100 underline underline-offset-4 text-sm lg:text-base"
+              className="text-white/100 underline underline-offset-4 text-base"
             >
               Registrujte se.
             </Link>
