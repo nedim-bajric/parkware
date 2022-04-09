@@ -9,8 +9,8 @@ import {
   RiUserLine,
 } from "react-icons/ri";
 const Drawer = () => {
-  const hidden = useSelector((state) => state.menu.hidden);
-  const info = useSelector((state) => state.user.data);
+  const hidden = useSelector(state => state.menu.hidden);
+  const info = useSelector(state => state.user.data);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   return (

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../components/Button/Button";
 import apiReq from "../api/apiReq";
+import { useDispatch } from "react-redux";
+import { setUser } from "../redux/Slices/userSlice";
 const Register = () => {
   const [data, setData] = useState({
     firstName: "",
@@ -11,9 +13,11 @@ const Register = () => {
     confirmPassword: "",
     registrationPlates: "",
   });
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const registerHandle = async () => {
     const response = await apiReq.post("/users/signUp", data);
+    dispatch(setUser(response.data.user));
     localStorage.setItem("token", response.data.token);
     if (response.status === 200) {
       navigate("/home");
@@ -96,7 +100,7 @@ const Register = () => {
               <div className="flex-1 flex flex-col space-y-2">
                 <input
                   className="w-full bg-transparent border-b border-main_purple/60 outline-none"
-                  onChange={(e) =>
+                  onChange={e =>
                     setData({ ...data, firstName: e.target.value })
                   }
                 />
@@ -107,9 +111,7 @@ const Register = () => {
               <div className="flex-1 flex flex-col items-end space-y-2">
                 <input
                   className="w-full bg-transparent border-b border-main_purple/60 outline-none"
-                  onChange={(e) =>
-                    setData({ ...data, lastName: e.target.value })
-                  }
+                  onChange={e => setData({ ...data, lastName: e.target.value })}
                 />
                 <slabel className="align self-start text-gray-400 px-1 text-base">
                   Prezime
@@ -118,7 +120,7 @@ const Register = () => {
             </div>
             <div className="flex flex-col space-y-2">
               <input
-                onChange={(e) => setData({ ...data, email: e.target.value })}
+                onChange={e => setData({ ...data, email: e.target.value })}
                 type="email"
                 className="bg-transparent border-b border-main_purple/60 outline-none"
               />
@@ -128,7 +130,7 @@ const Register = () => {
             </div>
             <div className="flex flex-col space-y-2 w-full">
               <input
-                onChange={(e) => setData({ ...data, password: e.target.value })}
+                onChange={e => setData({ ...data, password: e.target.value })}
                 type="password"
                 className="bg-transparent border-b border-main_purple/60 outline-none"
               />
@@ -145,7 +147,7 @@ const Register = () => {
             </div>
             <div className="flex flex-col space-y-2 w-full">
               <input
-                onChange={(e) =>
+                onChange={e =>
                   setData({ ...data, confirmPassword: e.target.value })
                 }
                 type="password"
@@ -164,7 +166,7 @@ const Register = () => {
 
               <div className="w-full flex flex-col ">
                 <input
-                  onChange={(e) =>
+                  onChange={e =>
                     setData({ ...data, registrationPlates: e.target.value })
                   }
                   type="text"

@@ -14,7 +14,7 @@ const Login = () => {
   const loginHandle = async () => {
     const response = await apiReq.post("/users/signIn", data);
     dispatch(setUser(response.data.user));
-    window.localStorage.setItem("token", response.data.token);
+    localStorage.setItem("token", response.data.token);
     if (response.status === 200) {
       navigate("/home");
     }
@@ -93,7 +93,7 @@ const Login = () => {
           <div className="w-full flex flex-col space-y-5">
             <div className="flex flex-col space-y-2">
               <input
-                onChange={(e) => setData({ ...data, email: e.target.value })}
+                onChange={e => setData({ ...data, email: e.target.value })}
                 type="email"
                 className="bg-transparent border-b border-main_purple/60 outline-none"
               />
@@ -103,7 +103,7 @@ const Login = () => {
             </div>
             <div className="flex flex-col space-y-2">
               <input
-                onChange={(e) => setData({ ...data, password: e.target.value })}
+                onChange={e => setData({ ...data, password: e.target.value })}
                 type="password"
                 className="bg-transparent border-b border-main_purple/60 outline-none"
               />
