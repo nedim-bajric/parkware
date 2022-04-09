@@ -2,14 +2,18 @@ import React, { useState } from "react";
 import Button from "../components/Button/Button";
 import { Link, useNavigate } from "react-router-dom";
 import apiReq from "../api/apiReq";
+import { useDispatch } from "react-redux";
+import { setUser } from "../redux/Slices/userSlice";
 const Login = () => {
   const [data, setData] = useState({
     email: "",
     password: "",
   });
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const loginHandle = async () => {
     const response = await apiReq.post("/users/signIn", data);
+    dispatch(setUser(response.data.user));
     window.localStorage.setItem("token", response.data.token);
     if (response.status === 200) {
       navigate("/home");

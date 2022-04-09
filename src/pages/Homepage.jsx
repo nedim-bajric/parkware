@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { RiMenu5Line } from "react-icons/ri";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import apiReq from "../api/apiReq";
 import LokacijeCard from "../components/LokacijeCard/LokacijeCard";
@@ -12,7 +12,8 @@ const Homepage = () => {
   const [lng, setLng] = useState(null);
   const [status, setStatus] = useState(null);
   const [token, setToken] = useState(null);
-
+  const info = useSelector((state) => state.user.data);
+  console.log(info);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const getLocation = () => {
@@ -21,7 +22,7 @@ const Homepage = () => {
     } else {
       setStatus("Locating...");
       navigator.geolocation.getCurrentPosition(
-        position => {
+        (position) => {
           setStatus("Done");
           setLat(position.coords.latitude);
           setLng(position.coords.longitude);
@@ -55,7 +56,7 @@ const Homepage = () => {
         <div className="w-screen min-h-screen bg-dark_blue">
           <div className="w-full h-full text-white px-5 flex flex-col space-y-10">
             <div className="w-[90%] h-14 flex items-center justify-between fixed">
-              <h1 className="text-2xl font-medium">Pozdrav Vedad</h1>
+              <h1 className="text-2xl font-medium">Pozdrav {info.firsName}</h1>
               <div
                 className="bg-main_purple p-2 rounded-full "
                 onClick={() => dispatch(handleMenu())}
@@ -76,7 +77,7 @@ const Homepage = () => {
                 Parking lokacije
               </h1>
               <div className="lg:flex">
-                {places?.map(item => (
+                {places?.map((item) => (
                   <LokacijeCard key={item._id} item={item} />
                 ))}
               </div>

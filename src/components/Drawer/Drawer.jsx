@@ -10,6 +10,7 @@ import {
 } from "react-icons/ri";
 const Drawer = () => {
   const hidden = useSelector((state) => state.menu.hidden);
+  const info = useSelector((state) => state.user.data);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   return (
@@ -22,9 +23,11 @@ const Drawer = () => {
         <div className="w-11/12 h-full bg-dark_blue text-white p-5">
           <div className="w-full h-full flex flex-col items-center space-y-5">
             <div className="w-full flex flex-col items-center space-y-2">
-              <h1 className="text-2xl">Nedim Bajric</h1>
+              <h1 className="text-2xl capitalize">
+                {info.firstName + " " + info.lastName}
+              </h1>
               <span className="text-xs font-semibold text-gray_disable">
-                nedim@gmail.com
+                {info.email}
               </span>
             </div>
             <div className="w-full bg-main_purple/40 h-0.5" />
