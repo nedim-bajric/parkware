@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { RiMenu5Line } from "react-icons/ri";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import apiReq from "../api/apiReq";
 import LokacijeCard from "../components/LokacijeCard/LokacijeCard";
@@ -21,7 +21,7 @@ const Homepage = () => {
     } else {
       setStatus("Locating...");
       navigator.geolocation.getCurrentPosition(
-        (position) => {
+        position => {
           setStatus("Done");
           setLat(position.coords.latitude);
           setLng(position.coords.longitude);
@@ -32,10 +32,16 @@ const Homepage = () => {
       );
     }
   };
+
   const getPlaces = async () => {
-    const response = await apiReq.get("/parkingLocations");
-    setPlaces(response.data);
+    try {
+      const response = await apiReq.get("/parkingLocations");
+      setPlaces(response.data);
+    } catch {
+      window.location.reload();
+    }
   };
+
   useEffect(() => {
     getPlaces();
     getLocation();
@@ -66,11 +72,11 @@ const Homepage = () => {
             )}
 
             <div className="w-full flex flex-col space-y-5 pt-80">
-              <h1 className="w-full text-center text-gray_disable underline underline-offset-8 decoration-main_purple/80 text-xs lg:text-base">
+              <h1 className="w-full text-center text-gray_disable underline underline-offset-8 decoration-main_purple/80 text-xs lg:text-base mt-4">
                 Parking lokacije
               </h1>
               <div className="lg:flex">
-                {places?.map((item) => (
+                {places?.map(item => (
                   <LokacijeCard key={item._id} item={item} />
                 ))}
               </div>

@@ -15,4 +15,5 @@ const routes = [
   { path: "/home", element: Homepage },
   { path: "/", element: Splash },
 ];
+
 export default routes;

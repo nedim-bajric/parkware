@@ -1,7 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { deleteData, handleRes } from "../../redux/Slices/reservationSlice";
+import { handleRes } from "../../redux/Slices/reservationSlice";
 import Button from "../Button/Button";
 
 const Res3 = () => {
