@@ -3,7 +3,6 @@ import React from "react";
 import Leaflet from "leaflet";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import Mainlayout from "./layouts/Mainlayout";
 
 Leaflet.Icon.Default.imagePath = "../node_modules/leaflet";
 
