@@ -10,7 +10,6 @@ const Login = () => {
   const navigate = useNavigate();
   const loginHandle = async () => {
     const response = await apiReq.post("/users/signIn", data);
-    console.log(response);
     localStorage.setItem("token", response.data.token);
     if (response.status === 200) {
       navigate("/home");

@@ -18,7 +18,7 @@ const Mapbox = ({ size, size2, latt, lng }) => {
     window.location.pathname === "/home" ? latt : data.parking?.lantitude;
   const long =
     window.location.pathname === "/home" ? lng : data.parking?.longitude;
-  console.log(lat, long);
+
   const position = [lat, long];
 
   return (
