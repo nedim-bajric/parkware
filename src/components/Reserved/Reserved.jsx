@@ -13,7 +13,7 @@ const Reserved = () => {
     minutes > 0 && setTimeout(() => setMinutes(minutes - 1), 60000);
   }, [minutes]);
   return (
-    <div className="absolute inset-x-0 text-white z-50 w-scren h-screen bg-black/50">
+    <div className="absolute inset-x-0 text-white z-50 w-scren h-screen bg-black/50 lg:w-1/2 lg:mx-auto">
       <div className="w-full h-full p-2 flex flex-col  justify-between">
         <div
           className="bg-main_purple w-12 flex items-center justify-center rounded-full p-2"
