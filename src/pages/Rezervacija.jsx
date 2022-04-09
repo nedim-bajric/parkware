@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import Mapbox from "../components/Mapbox/Mapbox";
-import Button from "../components/Button/Button";
 import Res2 from "../components/Res2/Res2";
 import Res3 from "../components/Res3/Res3";
 

@@ -7,9 +7,11 @@ const Login = () => {
     email: "",
     password: "",
   });
+
   const navigate = useNavigate();
   const loginHandle = async () => {
     const response = await apiReq.post("/users/signIn", data);
+
     localStorage.setItem("token", response.data.token);
     if (response.status === 200) {
       navigate("/home");

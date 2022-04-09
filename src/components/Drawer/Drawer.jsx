@@ -6,6 +6,7 @@ import {
   RiParkingFill,
   RiNotificationLine,
   RiLogoutCircleRLine,
+  RiUserLine,
 } from "react-icons/ri";
 const Drawer = () => {
   const hidden = useSelector((state) => state.menu.hidden);
@@ -52,6 +53,16 @@ const Drawer = () => {
                   <span className="text-xl font-semibold">
                     Moja rezervacija
                   </span>
+                </div>
+
+                <div
+                  className="w-full flex items-center space-x-10"
+                  onClick={() => navigate("/profile") || dispatch(handleMenu())}
+                >
+                  <div className="bg-main_purple w-12 flex items-center justify-center rounded-xl py-2 lg:mb-5">
+                    <RiUserLine size={30} />
+                  </div>
+                  <span className="text-xl font-semibold">Profil</span>
                 </div>
               </div>
 
