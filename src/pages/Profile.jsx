@@ -95,7 +95,7 @@ const Profile = () => {
             </div>
           </div>
           <div>
-            <Button title="Spremi promjene" onClick={handleUpdate} />
+            <Button title="Spremite promjene" onClick={handleUpdate} />
           </div>
         </div>
       </div>
