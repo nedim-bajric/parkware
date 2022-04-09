@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../components/Button/Button";
 import { Link } from "react-router-dom";
+import apiReq from "../api/apiReq";
 const Login = () => {
+  const [data, setData] = useState({
+    email: "",
+    pw: "",
+  });
+
+  const loginHandle = async () => {
+    const response = await apiReq.post("/users/signIn", data);
+    console.log(response);
+  };
   return (
     <div className="login-page-content flex">
       <div
@@ -70,12 +80,13 @@ const Login = () => {
           </svg>
         </div>
       </div>
-      <div className="w-screen h-screen  bg-dark_blue lg:w-1/2 h-screen">
+      <div className="w-screen h-screen  bg-dark_blue lg:w-1/2 ">
         <div className="w-full h-full text-white p-5 flex flex-col items-start justify-start space-y-10 lg:mx-auto lg:w-2/3 lg:p-20 lg:place-content-center">
           <h1 className="text-3xl font-medium">Prijavite se</h1>
           <div className="w-full flex flex-col space-y-5">
             <div className="flex flex-col space-y-2">
               <input
+                onChange={(e) => setData({ ...data, email: e.target.value })}
                 type="email"
                 className="bg-transparent border-b border-main_purple/60 outline-none"
               />
@@ -85,6 +96,7 @@ const Login = () => {
             </div>
             <div className="flex flex-col space-y-2">
               <input
+                onChange={(e) => setData({ ...data, pw: e.target.value })}
                 type="email"
                 className="bg-transparent border-b border-main_purple/60 outline-none"
               />
@@ -96,7 +108,7 @@ const Login = () => {
           <span className="w-full text-right text-base text-pinky/50">
             Zaboravljena lozinka?
           </span>
-          <Button title="Prijavi se" />
+          <Button title="Prijavi se" onClick={loginHandle} disable={false} />
           <h3 className="w-full text-white/30 text-center font-bold text-base">
             Nemate profil?{" "}
             <Link

@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "../components/Button/Button";
-
+import apiReq from "../api/apiReq";
 const Register = () => {
+  const [data, setData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    registrationPlates: "",
+  });
+  const registerHandle = async () => {
+    const response = await apiReq.post("/users/signUp", data);
+    console.log(response);
+  };
   return (
     <div className="register-page-content flex">
       <div
@@ -78,13 +90,21 @@ const Register = () => {
             <h3 className="px-1 font-medium text-base">Lični podaci</h3>
             <div className="w-full flex items-center justify-center space-x-2">
               <div className="flex-1 flex flex-col space-y-2">
-                <input className="w-full bg-transparent border-b border-main_purple/60 outline-none" />
+                <input
+                  className="w-full bg-transparent border-b border-main_purple/60 outline-none"
+                  onChange={(e) => setData({ ...data, ime: e.target.value })}
+                />
                 <label className="align self-start text-gray-400 px-1 text-base">
                   Ime
                 </label>
               </div>
               <div className="flex-1 flex flex-col items-end space-y-2">
-                <input className="w-full bg-transparent border-b border-main_purple/60 outline-none" />
+                <input
+                  className="w-full bg-transparent border-b border-main_purple/60 outline-none"
+                  onChange={(e) =>
+                    setData({ ...data, prezime: e.target.value })
+                  }
+                />
                 <slabel className="align self-start text-gray-400 px-1 text-base">
                   Prezime
                 </slabel>
@@ -92,6 +112,7 @@ const Register = () => {
             </div>
             <div className="flex flex-col space-y-2">
               <input
+                onChange={(e) => setData({ ...data, email: e.target.value })}
                 type="email"
                 className="bg-transparent border-b border-main_purple/60 outline-none"
               />
@@ -101,6 +122,7 @@ const Register = () => {
             </div>
             <div className="flex flex-col space-y-2 w-full">
               <input
+                onChange={(e) => setData({ ...data, password: e.target.value })}
                 type="password"
                 className="bg-transparent border-b border-main_purple/60 outline-none"
               />
@@ -115,6 +137,20 @@ const Register = () => {
                 </p>
               </div>
             </div>
+            <div className="flex flex-col space-y-2 w-full">
+              <input
+                onChange={(e) =>
+                  setData({ ...data, confirmPassword: e.target.value })
+                }
+                type="password"
+                className="bg-transparent border-b border-main_purple/60 outline-none"
+              />
+              <div className="w-full flex items-start justify-between">
+                <label for="fname" className="px-1 text-gray-400 text-base">
+                  Potvrdite lozinka
+                </label>
+              </div>
+            </div>
             <div className="flex flex-col items-start space-y-10">
               <h3 className="px-1 pt-20 font-medium text-base">
                 Informacije o vozilu
@@ -122,17 +158,20 @@ const Register = () => {
 
               <div className="w-full flex flex-col ">
                 <input
+                  onChange={(e) =>
+                    setData({ ...data, registrationPlates: e.target.value })
+                  }
                   type="text"
                   className="bg-transparent border-b border-main_purple/60 outline-none w-full"
                 />
                 <div className="flex w-full items-center justify-end mb-10 ">
-                  <p className="text-gray-400/90 max-w-fit text-xs  text-right text-base">
+                  <p className="text-gray-400/90 max-w-fit text-xs  text-right ">
                     + Dodajte još vozila
                   </p>
                 </div>
               </div>
             </div>
-            <Button title="Registruj se" />
+            <Button title="Registruj se" onClick={registerHandle} />
             <h3 className="w-full text-center font-bold text-white/30 text-base">
               Imate profil?{" "}
               <Link
