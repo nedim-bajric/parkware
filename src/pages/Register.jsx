@@ -12,18 +12,22 @@ const Register = () => {
       </div>
       <div className="w-screen h-screen bg-dark_blue overflow-x-hidden lg:w-1/2 h-screen lg:place-content-center">
         <div className="w-full h-full text-white p-5 flex flex-col  mx-auto items-start justify-start space-y-10 lg:p-20 lg:place-content-center">
-          <h1 className="text-2xl lg:text-3xl font-medium lg:mx-auto">Registrujte se</h1>
+          <h1 className="text-3xl font-medium lg:mx-auto">Registrujte se</h1>
           <div className="max-w-full space-y-5 lg:mx-auto">
+          <h3 className="px-1 font-medium text-base">
+                Lični podaci
+              </h3>
             <div className="w-full flex items-center justify-center space-x-2">
+            
               <div className="flex-1 flex flex-col space-y-2">
                 <input className="w-full bg-transparent border-b border-main_purple/60 outline-none" />
-                <label className="align self-start text-gray-400 px-1 text-xs lg:text-sm">
+                <label className="align self-start text-gray-400 px-1 text-base">
                   Ime
                 </label>
               </div>
               <div className="flex-1 flex flex-col items-end space-y-2">
                 <input className="w-full bg-transparent border-b border-main_purple/60 outline-none" />
-                <slabel className="align self-start text-gray-400 px-1 text-xs lg:text-sm">
+                <slabel className="align self-start text-gray-400 px-1 text-base">
                   Prezime
                 </slabel>
               </div>
@@ -33,7 +37,7 @@ const Register = () => {
                 type="email"
                 className="bg-transparent border-b border-main_purple/60 outline-none"
               />
-              <label for="email" className="px-1 text-gray-400 text-xs text:sm">
+              <label for="email" className="px-1 text-gray-400 text-base">
                 Email
               </label>
             </div>
@@ -42,11 +46,11 @@ const Register = () => {
                 type="password"
                 className="bg-transparent border-b border-main_purple/60 outline-none"
               />
-              <div className="w-full flex items-start space-x-24 lg:space-x-50">
-                <label for="fname" className="px-1 text-gray-400 text-xs lg:text-sm">
+              <div className="w-full flex items-start justify-between">
+                <label for="fname" className="px-1 text-gray-400 text-base">
                   Lozinka
                 </label>
-                <p className="text-gray-400/50 max-w-xs text-xs lg:text-sm text-right ">
+                <p className="text-gray-400/50 max-w-xs text-base text-right ">
                   Lozinka mora sadržavati
                   <br />
                   najmanje 8 karaktera
@@ -54,7 +58,7 @@ const Register = () => {
               </div>
             </div>
             <div className="flex flex-col items-start space-y-10">
-              <h3 className="px-1 pt-20 font-medium text-xs lg:text-sm">
+              <h3 className="px-1 pt-20 font-medium text-base">
                 Informacije o vozilu
               </h3>
 
@@ -63,22 +67,19 @@ const Register = () => {
                   type="text"
                   className="bg-transparent border-b border-main_purple/60 outline-none w-full"
                 />
-                <div className="flex w-full items-center justify-between mb-10">
-                  <label for="fname" className="px-1 text-gray-400 text-xs lg:text-sm">
-                    Lozinka
-                  </label>
-                  <p className="text-gray-400/50 max-w-fit text-xs  text-right text-xs lg:text-sm">
+                <div className="flex w-full items-center justify-end mb-10 ">
+                  <p className="text-gray-400/90 max-w-fit text-xs  text-right text-base">
                     + Dodajte još vozila
                   </p>
                 </div>
               </div>
             </div>
             <Button title="Registruj se" />
-            <h3 className="w-full text-center font-bold text-white/30 text-sm lg:text-base">
+            <h3 className="w-full text-center font-bold text-white/30 text-base">
               Imate profil?{" "}
               <Link
                 to="/login"
-                className="text-white/100 underline underline-offset-4 text-sm lg:text-base"
+                className="text-white/100 underline underline-offset-4 text-base"
               >
                 Prijavite se.
               </Link>
