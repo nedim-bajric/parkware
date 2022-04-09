@@ -12,7 +12,7 @@ const Infocard = () => {
       <div className="p-3 flex flex-col items-start justify-between h-full w-full">
         <div
           className="bg-main_purple w-12 flex items-center justify-center rounded-full p-2"
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/home")}
         >
           <IoIosArrowBack size={30} />
         </div>

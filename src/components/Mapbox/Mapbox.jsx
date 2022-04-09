@@ -12,19 +12,24 @@ Leaflet.Icon.Default.mergeOptions({
   shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
 });
 
-const Mapbox = ({ size, size2 }) => {
+const Mapbox = ({ size, size2, latt, lng }) => {
   const data = useSelector((state) => state.parking);
-  const lat = data.parking?.lantitude;
-  const long = data.parking?.longitude;
-  const position =
-    window.location.pathname === "/home" ? [44.203439, 17.907743] : [lat, long];
+  const lat =
+    window.location.pathname === "/home" ? latt : data.parking?.lantitude;
+  const long =
+    window.location.pathname === "/home" ? lng : data.parking?.longitude;
+  console.log(lat, long);
+  const position = [lat, long];
+
   return (
     <div>
       <MapContainer
         center={position}
         zoom={50}
         style={{ height: size, width: size2 }}
-        className="rounded-xl mx-auto fixed left-0 right-0 top-20"
+        className={`rounded-xl mx-auto fixed left-0 right-0 ${
+          window.location.pathname === "/home" ? "top-20" : "top-0"
+        }`}
       >
         <TileLayer
           attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
