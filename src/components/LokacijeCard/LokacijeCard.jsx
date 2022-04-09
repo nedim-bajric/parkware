@@ -11,7 +11,7 @@ const LokacijeCard = ({ item }) => {
       onClick={() =>
         dispatch(setData(item)) && navigate(`/parking#${item._id}`)
       }
-      className="w-full h-fit  border-b border-gray_disable/30 lg:w-1/5 lg:border lg:rounded-xl lg:p-5 lg:m-2 lg:bg-main_purple/10"
+      className="w-full h-fit border-b border-gray_disable/30 lg:w-1/5 lg:border lg:rounded-xl lg:p-5 lg:m-2 lg:bg-main_purple/10 cursor-pointer"
     >
       <div className="w-full h-full flex flex-col py-5">
         <div className="flex items-start space-x-5 w-full lg:space-x-0 lg:flex-col lg:items-center">

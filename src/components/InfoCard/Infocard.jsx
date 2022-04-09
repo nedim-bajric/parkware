@@ -4,9 +4,10 @@ import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { handleRes, setData } from "../../redux/Slices/reservationSlice";
+
 const Infocard = () => {
   const navigate = useNavigate();
-  const data = useSelector((state) => state.parking);
+  const data = useSelector(state => state.parking);
   const dispatch = useDispatch();
 
   return (
@@ -58,8 +59,11 @@ const Infocard = () => {
             </span>
           </div>
           <Button
-            title="Potrvdi"
-            onClick={() => dispatch(handleRes()) && dispatch(setData(data))}
+            title="Rezerviši"
+            onClick={() => {
+              dispatch(handleRes());
+              dispatch(setData(data));
+            }}
             disable={
               data.parking.totalSpots === data.parking.takenspots ? true : false
             }
