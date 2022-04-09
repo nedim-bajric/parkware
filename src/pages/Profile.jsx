@@ -7,7 +7,6 @@ import { useSelector } from "react-redux";
 const Profile = () => {
   const navigate = useNavigate();
   const info = useSelector(state => state.user.data);
-  console.log(info);
   const [data, setData] = useState({
     firstName: "",
     lastName: "",
@@ -17,8 +16,7 @@ const Profile = () => {
   });
 
   const handleUpdate = async () => {
-    const response = await apiReq.put(`/users/update/${info.id}`, data);
-    console.log(response);
+    await apiReq.put(`/users/update/${info.id}`, data);
   };
   return (
     <div className="bg-dark_blue w-screen h-screen">
@@ -95,7 +93,7 @@ const Profile = () => {
             </div>
           </div>
           <div>
-            <Button title="Spremite promjene" onClick={handleUpdate} />
+            <Button title="Spremi promjene" onClick={handleUpdate} />
           </div>
         </div>
       </div>

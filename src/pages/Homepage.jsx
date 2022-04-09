@@ -13,7 +13,6 @@ const Homepage = () => {
   const [status, setStatus] = useState(null);
   const [token, setToken] = useState(null);
   const info = useSelector(state => state.user.data);
-  console.log(info);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const getLocation = () => {
@@ -53,7 +52,7 @@ const Homepage = () => {
       {token === null || token === undefined ? (
         navigate("/")
       ) : (
-        <div className="w-screen min-h-screen bg-dark_blue">
+        <div className="min-h-screen bg-dark_blue">
           <div className="w-full h-full text-white px-5 flex flex-col space-y-10">
             <div className="w-[90%] h-14 flex items-center justify-between fixed">
               <h1 className="text-2xl font-medium">Pozdrav {info.firstName}</h1>
