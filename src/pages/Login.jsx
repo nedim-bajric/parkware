@@ -115,7 +115,7 @@ const Login = () => {
           <span className="w-full text-right text-base text-pinky/50">
             Zaboravljena lozinka?
           </span>
-          <Button title="Prijavi se" onClick={loginHandle} disable={false} />
+          <Button title="Prijavite se" onClick={loginHandle} disable={false} />
           <h3 className="w-full text-white/30 text-center font-bold text-base">
             Nemate profil?{" "}
             <Link

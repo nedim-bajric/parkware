@@ -155,7 +155,7 @@ const Register = () => {
               />
               <div className="w-full flex items-start justify-between">
                 <label htmlFor="fname" className="px-1 text-gray-400 text-base">
-                  Potvrdite lozinka
+                  Potvrdite lozinku
                 </label>
               </div>
             </div>
@@ -179,7 +179,7 @@ const Register = () => {
                 </div>
               </div>
             </div>
-            <Button title="Registruj se" onClick={registerHandle} />
+            <Button title="Registrujte se" onClick={registerHandle} />
             <h3 className="w-full text-center font-bold text-white/30 text-base">
               Imate profil?{" "}
               <Link
