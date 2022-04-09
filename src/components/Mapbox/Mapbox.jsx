@@ -27,7 +27,7 @@ const Mapbox = ({ size, size2, latt, lng }) => {
         center={position}
         zoom={50}
         style={{ height: size, width: size2 }}
-        className={`rounded-xl mx-auto fixed left-0 right-0 ${
+        className={`rounded-xl mx-auto fixed left-0 right-0  ${
           window.location.pathname === "/home" ? "top-20" : "top-0"
         }`}
       >

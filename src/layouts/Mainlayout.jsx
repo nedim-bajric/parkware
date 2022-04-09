@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import Drawer from "../components/Drawer/Drawer";
 import routes from "../utils/routes";
 
 const Mainlayout = () => {
@@ -10,7 +11,8 @@ const Mainlayout = () => {
   };
 
   return (
-    <div>
+    <div className="relative">
+      <Drawer />
       <Routes>{getRoutes(routes)}</Routes>
     </div>
   );

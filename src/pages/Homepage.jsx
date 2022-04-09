@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { RiMenu5Line } from "react-icons/ri";
+import { useDispatch, useSelector } from "react-redux";
 import apiReq from "../api/apiReq";
 import LokacijeCard from "../components/LokacijeCard/LokacijeCard";
 import Mapbox from "../components/Mapbox/Mapbox";
+import { handleMenu } from "../redux/Slices/menuSlice";
 const Homepage = () => {
   const [places, setPlaces] = useState([]);
   const [latt, setLat] = useState(null);
   const [lng, setLng] = useState(null);
   const [status, setStatus] = useState(null);
-
+  const dispatch = useDispatch();
+  const hidden = useSelector((state) => state.menu.hidden);
+  console.log(hidden);
   const getLocation = () => {
     if (!navigator.geolocation) {
       setStatus("Geolocation is not supported by your browser");
@@ -40,7 +44,10 @@ const Homepage = () => {
       <div className="w-full h-full text-white px-5 flex flex-col space-y-10">
         <div className="w-[90%] h-14 flex items-center justify-between fixed">
           <h1 className="text-2xl font-medium">Pozdrav Vedad</h1>
-          <div className="bg-main_purple p-2 rounded-full ">
+          <div
+            className="bg-main_purple p-2 rounded-full "
+            onClick={() => dispatch(handleMenu())}
+          >
             <RiMenu5Line size={25} />
           </div>
         </div>

@@ -25,9 +25,24 @@ const Infocard = () => {
             </span>
             <span className="w-full flex items-center justify-between text-sm text-zinc-200">
               Dostupnost{" "}
-              <span className="text-green">
+              <span
+                className={`${
+                  data.parking.takenSpots === data.parking.totalSpots
+                    ? "text-red"
+                    : "text-green"
+                }`}
+              >
                 {data.parking.takenSpots}{" "}
-                <span className="text-white"> / {data.parking.totalSpots}</span>
+                <span
+                  className={`${
+                    data.parking.takenSpots === data.parking.totalSpots
+                      ? "text-red"
+                      : "text-white"
+                  }`}
+                >
+                  {" "}
+                  / {data.parking.totalSpots}
+                </span>
               </span>
             </span>
             <span className="w-full flex items-center justify-between text-sm text-zinc-200">
@@ -40,7 +55,12 @@ const Infocard = () => {
               Nedjeljom i praznicima besplatan parking 0-24
             </span>
           </div>
-          <Button title="Potrvdi" disable={false} />
+          <Button
+            title="Potrvdi"
+            disable={
+              data.parking.totalSpots === data.parking.takenspots ? true : false
+            }
+          />
         </div>
       </div>
     </div>
