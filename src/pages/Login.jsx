@@ -9,14 +9,19 @@ const Login = () => {
     email: "",
     password: "",
   });
+  const [error, setError] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const loginHandle = async () => {
-    const response = await apiReq.post("/users/signIn", data);
-    dispatch(setUser(response.data.user));
-    localStorage.setItem("token", response.data.token);
-    if (response.status === 200) {
-      navigate("/home");
+    try {
+      const response = await apiReq.post("/users/signIn", data);
+      dispatch(setUser(response.data.user));
+      localStorage.setItem("token", response.data.token);
+      if (response.status === 200) {
+        navigate("/home");
+      }
+    } catch {
+      setError(true);
     }
   };
   return (
@@ -90,6 +95,11 @@ const Login = () => {
       <div className="w-screen h-screen  bg-dark_blue lg:w-1/2 ">
         <div className="w-full h-full text-white p-5 flex flex-col items-start justify-start space-y-10 lg:mx-auto lg:w-2/3 lg:p-20 lg:place-content-center">
           <h1 className="text-3xl font-medium">Prijavite se</h1>
+          {error && (
+            <h1 className="text-3xl font-medium text-red">
+              Došlo je do greške
+            </h1>
+          )}
           <div className="w-full flex flex-col space-y-5">
             <div className="flex flex-col space-y-2">
               <input

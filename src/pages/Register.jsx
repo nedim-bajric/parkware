@@ -13,14 +13,19 @@ const Register = () => {
     confirmPassword: "",
     registrationPlates: "",
   });
+  const [error, setError] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const registerHandle = async () => {
-    const response = await apiReq.post("/users/signUp", data);
-    dispatch(setUser(response.data.user));
-    localStorage.setItem("token", response.data.token);
-    if (response.status === 200) {
-      navigate("/home");
+    try {
+      const response = await apiReq.post("/users/signUp", data);
+      dispatch(setUser(response.data.user));
+      localStorage.setItem("token", response.data.token);
+      if (response.status === 200) {
+        navigate("/home");
+      }
+    } catch {
+      setError(true);
     }
   };
   return (
@@ -94,6 +99,11 @@ const Register = () => {
       <div className="w-screen bg-dark_blue overflow-x-hidden lg:w-1/2 h-screen lg:place-content-center">
         <div className="w-full h-full text-white p-5 flex flex-col  mx-auto items-start justify-start space-y-10 lg:p-20 lg:place-content-center">
           <h1 className="text-3xl font-medium lg:mx-auto">Registrujte se</h1>
+          {error && (
+            <h1 className="text-3xl font-medium text-red lg:mx-auto">
+              Došlo je do greške
+            </h1>
+          )}
           <div className="max-w-full space-y-5 lg:mx-auto">
             <h3 className="px-1 font-medium text-base">Lični podaci</h3>
             <div className="w-full flex items-center justify-center space-x-2">
