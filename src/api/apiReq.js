@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: "https://c32c-109-163-162-233.ngrok.io",
+  baseURL: "https://048d-109-163-161-163.ngrok.io",
   headers: {
     Authorization: `Bearer ${localStorage.getItem("token")}`,
   },
